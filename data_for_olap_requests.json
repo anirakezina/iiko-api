@@ -1,0 +1,70 @@
+ACCESS_TOKEN = str(5232818394:AAG8-YMwIqMMDwsKCjm017DNsTjkPaKRZzE)
+DEBUG = True  # Без добавления категории для клиента и отправки SMS
+IIKO_BIZ_IP = 'https://iiko.biz'
+IIKO_BIZ_LOGIN = 'demoDelivery'IIKO_BIZ_PASSWORD
+ = 'Pl1yFaKFCGvvJKi'IIKO_BIZ_PORT
+ = '9900'IIKO_IT_NAME
+ = 'SUSHI_PIZZA'IIKO_SERVER_LOGIN
+ = 'admin'IIKO_SERVER_PASSWORD
+ = 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'KITCHEN1
+ = 'first_kitchen_id'KITCHEN2
+ = 'second_kitchen_id'LATENESS_THRESHOLD_IN_MINUTES
+ = 30
+ORGANIZATION_ID = 'organization_id' PROMO_CATEGORY_ID
+ = 'c8726b30-742b-48a4-af8b-1f4d03a88b4d'REPORT_TIMEZONE
+ = 'Asia/Irkutsk'TELEGRAM_BOT_TOKEN
+ = 'bot_token_here'TELEGRAM_CHAT_ID
+{
+    "ReportType": "ПРОДАЖИ",
+    "buildSummary": "false",
+    "groupByRowFields": [
+      "Отдел.Id",
+      "OpenDate.Набрано",
+      "Delivery.Number",
+      "OpenTime",
+      "Доставка.Времяпечати",
+      "Delivery.BillTime",
+      "PrechequeTime",
+      "Доставка.CookingFinishTime",
+      "Delivery. SendTime",
+      "Доставка.Фактическоевремя",
+      "Доставка.closeTime",
+      "closeTime",
+      "Доставка.WayDuration",
+      "Время заказа.Длиназаказа",
+      "Доставка.Задержка",
+      "Delivery.DiffBetweenActualDeliveryTimeAndPredictedDeliveryTime",
+      "Delivery.ExpectedTime",
+      "Доставка.PredictedDeliveryTime",
+      "Доставка.PredictedCookingCompleteTime",
+      "Delivery.CustomerName",
+      "Delivery.CustomerPhone",
+      "OrderServiceType"
+    ],
+    "groupByColFields": [
+    ],
+    "aggregateFields": [
+    ],
+    "фильтры": {
+      "OpenDate.Набрано": {
+        "filterType": "DateRange",
+        "periodType": "ПОЛЬЗОВАТЕЛЬСКИЙ",
+        "from": "2022-02-01",
+        "to": "2022-02-01",
+        "includeLow": "true",
+        "includeHigh": "true"
+      },
+      "OrderDeleted": {
+        "filterType": "IncludeValues",
+        "значения": ["NOT_DELETED"]
+      },
+      "OrderServiceType": {
+        "filterType": "IncludeValues",
+        "values": ["DELIVERY_BY_COURIER"]
+      },
+      "OperationType": {
+        "filterType": "ExcludeValues",
+        "values": ["STORNED", "NO_PAYMENT"]
+      }
+    }
+  }
